@@ -1,0 +1,14 @@
+﻿@page "{handler?}/{age:int?}"
+
+@model RazorRouteDataApp.Pages.EmplsModel
+
+@inject ITimeService ts
+
+<h3>@ts.GetTime</h3>
+<h3>Employees:</h3>
+<ul>
+    @foreach(Employee e in Model.EmployeesList)
+    {
+        <li>@e.Name @e.Age</li>
+    }
+</ul>
